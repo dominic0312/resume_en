@@ -1,13 +1,13 @@
 # Site settings
-title:          三牛犇文档库
-description:    "规范,协同,高效"
+title:          Dominic's Resume
+description:    "A progmatic programmer"
 #baseurl:        "/tale"
-url:            "http://docs.sanniuben.com"
+url:            "http://resume.dominic.pro"
 
 # Author
 author:
   name:         Dominic
-  url:          http://docs.sanniuben.com
+  url:          http://resume.dominic.pro
   email:        dominic0312@126.com
 
 # Build settings

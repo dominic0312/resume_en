@@ -10,17 +10,17 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :application_name, 'docs'
-set :domain, 'gitserver'
-set :deploy_to, '/home/devops/docs_prod'
-set :repository, 'git@github.com:dominic0312/tale.git'
+set :application_name, 'resume'
+set :domain, '47.75.204.82'
+set :deploy_to, '/home/dominic/apps/resume'
+set :repository, 'git@github.com:dominic0312/resume_en.git'
 set :branch, 'master'
-set :bundle_path, '/home/devops/docs_prod/bundle'
+set :bundle_path, '/home/dominic/apps/resume/bundle'
 set :shared_path,   "#{fetch(:deploy_to)}/shared"
 set :shared_dirs , fetch(:shared_dirs, []).push(fetch(:bundle_path))
 
 # Optional settings:
-set :user, 'devops'          # Username in the server to SSH to.
+set :user, 'dominic'          # Username in the server to SSH to.
 #   set :port, '30000'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
@@ -36,7 +36,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use', 'ruby-2.4.4@default'
+  invoke :'rvm:use', 'ruby-2.5.1@default'
 end
 
 # Put any custom commands you need to run at setup
@@ -54,14 +54,14 @@ task :deploy do
     # instance of your project.
     invoke :'git:clone'
     #invoke :'deploy:link_shared_paths'
-    invoke :'rvm:use', 'ruby-2.4.4@default'
+    invoke :'rvm:use', 'ruby-2.5.1@default'
     invoke :'bundle:install'
     #invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
      on :launch do
-       invoke :'rvm:use', 'ruby-2.4.4@default'
-       command %{rm -rf /www/doc_site && jekyll build && cp -r /home/devops/docs_prod/current/_site /www/doc_site}
+       invoke :'rvm:use', 'ruby-2.5.1@default'
+       command %{rm -rf /www/resume && jekyll build && cp -r /home/dominic/apps/resume/current/_site /www/resume}
        command %{echo "Site moved to production"}
      end
 
