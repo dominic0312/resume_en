@@ -1,0 +1,29 @@
+# Site settings
+title:          三牛犇文档库
+description:    "规范,协同,高效"
+#baseurl:        "/tale"
+url:            "http://docs.sanniuben.com"
+
+# Author
+author:
+  name:         Dominic
+  url:          http://docs.sanniuben.com
+  email:        dominic0312@126.com
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
