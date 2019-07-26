@@ -1,6 +1,6 @@
 # Site settings
 title:Dominic's Resume
-description:    "A progmatic programmer"
+#description: "A progmatic programmer"
 #baseurl:        "/tale"
 url:            "http://resume.dominic.pro"
 
@@ -16,7 +16,7 @@ markdown:       kramdown
 # Assets
 sass:
   sass_dir:     _sass
-#  style:        compressed
+  style:        compressed
 
 # Gems
 plugins:
