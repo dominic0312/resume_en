@@ -16,7 +16,7 @@ markdown:       kramdown
 # Assets
 sass:
   sass_dir:     _sass
-  style:        compressed
+#  style:        compressed
 
 # Gems
 plugins:
